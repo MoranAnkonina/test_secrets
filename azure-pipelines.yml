@@ -16,7 +16,7 @@ variables:
 #  password: dockerHub2020
 #  repoName: 'moranankonina/dockertask'
 
-env: # Or as an environment variable
+environment variable:
   super_secret: ${{ secrets.password }}
   
 steps:
