@@ -13,11 +13,9 @@ variables:
   imageName: moranankonina/pipelines-mvn-docker
   dockerHub: 'dockerHub'
   userName: moranankonina
-#  password: dockerHub2020
+  password: ${{ secrets.password }}
 #  repoName: 'moranankonina/dockertask'
 
-environment variable:
-  super_secret: ${{ secrets.password }}
   
 steps:
 - task: Maven@3
@@ -34,7 +32,7 @@ steps:
 - script: |
     cd my-app
     mvn package
-    docker login -u $(userName) -p $(super_secret)
+    docker login -u $(userName) -p $(password)
     
 - task: Docker@2
   displayName: Build & push an image
