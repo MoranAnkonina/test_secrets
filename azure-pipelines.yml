@@ -32,6 +32,12 @@ steps:
     mvn package
     
 - task: Docker@2
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dockerHUB'
+    repository: 'moranankonina/pipelines-mvn-docker'
+    command: 'buildAndPush'
+    Dockerfile: './Dockerfile'
   displayName: Build & push an image
   inputs:
     repository: $(imageName)
