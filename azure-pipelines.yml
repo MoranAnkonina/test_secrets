@@ -12,8 +12,7 @@ pool:
 variables:
   imageName: moranankonina/pipelines-mvn-docker
   dockerHub: dockerHub
-  #userName: moranankonina
-  #password: dockerHub2020
+ 
 
 steps:
 - task: Maven@3
@@ -31,7 +30,6 @@ steps:
     cd my-app
     mvn package
     
-- task: Docker@2
 - task: Docker@2
   inputs:
     containerRegistry: 'dockerHUB'
