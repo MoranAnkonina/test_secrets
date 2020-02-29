@@ -39,10 +39,3 @@ steps:
     command: 'buildAndPush'
     Dockerfile: './Dockerfile'
   displayName: Build & push an image
-  inputs:
-    repository: $(imageName)
-    command: buildAndPush
-    tags: |
-      latest
-      $(Build.BuildNumber)
-    Dockerfile: ./Dockerfile 
